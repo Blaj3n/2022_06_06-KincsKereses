@@ -10,4 +10,14 @@ public class Lada {
     public Lada(){
         ladamegvan = false;
     }
+    
+    public boolean kincsMegvan(){
+        int i = 0;
+        if (ladamegvan) {
+            System.out.println(ladamegvan);
+        }else{
+            System.out.println(!ladamegvan);
+        }
+        return ladamegvan;
+    }
 }
