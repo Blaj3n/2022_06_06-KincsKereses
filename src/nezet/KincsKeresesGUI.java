@@ -2,6 +2,7 @@ package nezet;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JOptionPane;
 
 public class KincsKeresesGUI extends javax.swing.JFrame {
 
@@ -9,9 +10,15 @@ public class KincsKeresesGUI extends javax.swing.JFrame {
         initComponents();
     }
 
-    public void pirosX() {
+    public void pirosX(JButton gomb) {
         ImageIcon kep = new ImageIcon(this.getClass().getResource("kepek/redX.jpg"));
-        gold.setIcon(kep);
+        gomb.setIcon(kep);
+    }
+
+    public void Kincs() {
+        ImageIcon kep = new ImageIcon(this.getClass().getResource("kepek/gold.jpg"));
+        silver.setIcon(kep);
+        JOptionPane.showMessageDialog(this, "Gratulálok! Megtaláltad a kincset!", "Játék Vége", JOptionPane.INFORMATION_MESSAGE);
     }
 
     /**
@@ -38,6 +45,11 @@ public class KincsKeresesGUI extends javax.swing.JFrame {
         setPreferredSize(new java.awt.Dimension(500, 500));
 
         SilverButton.setText("OPEN");
+        SilverButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SilverButtonActionPerformed(evt);
+            }
+        });
 
         GoldButton.setText("OPEN");
         GoldButton.addActionListener(new java.awt.event.ActionListener() {
@@ -47,6 +59,11 @@ public class KincsKeresesGUI extends javax.swing.JFrame {
         });
 
         BronzeButton.setText("OPEN");
+        BronzeButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BronzeButtonActionPerformed(evt);
+            }
+        });
 
         jTextField1.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jTextField1.setText("Én rejtem a kincset!");
@@ -79,12 +96,12 @@ public class KincsKeresesGUI extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(bronze, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(bronze, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(21, 21, 21)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(gold, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(gold, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(GoldButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(37, 37, 37)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -92,7 +109,7 @@ public class KincsKeresesGUI extends javax.swing.JFrame {
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(16, 16, 16)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(silver, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(silver, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(SilverButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
@@ -132,8 +149,16 @@ public class KincsKeresesGUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void GoldButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GoldButtonActionPerformed
-        pirosX();
+        pirosX(gold);
     }//GEN-LAST:event_GoldButtonActionPerformed
+
+    private void SilverButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SilverButtonActionPerformed
+        Kincs();
+    }//GEN-LAST:event_SilverButtonActionPerformed
+
+    private void BronzeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BronzeButtonActionPerformed
+        pirosX(bronze);
+    }//GEN-LAST:event_BronzeButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BronzeButton;
