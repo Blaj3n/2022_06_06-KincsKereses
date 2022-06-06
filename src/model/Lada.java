@@ -1,23 +1,23 @@
 package model;
 
 public class Lada {
-    
+
     public static final String TALALT = "talált";
     public static final String MELLE = "mellé";
-    
-    boolean ladamegvan;
-    
-    public Lada(){
-        ladamegvan = false;
+
+    private boolean ladamegvan;
+
+    public void setLadamegvan(boolean ladamegvan) {
+        this.ladamegvan = ladamegvan;
     }
-    
-    public boolean kincsMegvan(){
-        int i = 0;
-        if (ladamegvan) {
-            System.out.println(ladamegvan);
-        }else{
-            System.out.println(!ladamegvan);
-        }
+
+    public boolean kincsMegvan() {
+        System.out.println(ladamegvan);
         return ladamegvan;
     }
+
+    public Lada() {
+        ladamegvan = false;
+    }
+
 }

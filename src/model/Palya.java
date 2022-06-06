@@ -16,9 +16,14 @@ public class Palya {
 
     private void palyaReset() {
         megvanKincs = true;
-        palya = new char[PALYA_HOSSZ];
+        char[] palya = new char[PALYA_HOSSZ];
         for (int i = 0; i < PALYA_HOSSZ; i++) {
             palya[i] = '_';
         }
+    }
+    
+    public void kincsPoz(){
+        int palyahossz = 3;
+        int kincsvan = (PALYA_HOSSZ-1);
     }
 }
